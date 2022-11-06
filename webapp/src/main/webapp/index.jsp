@@ -1,37 +1,35 @@
-<form action="action_page.php">
-  <div class="container">
-    <h1>New user Register for DevOps Learning</h1>
-    <p>Please fill in this form to create an account.</p>
-    <hr>
-     
-    <label for="Name"><b>Enter Name</b></label>
-    <input type="text" placeholder="Enter Full Name" name="Name" id="Name" required>
-    <br>
-    
-    <label for="mobile"><b>Enter mobile</b></label>
-    <input type="text" placeholder="Enter moible number" name="mobile" id="mobile" required>
-    <br>
-
-    <label for="email"><b>Enter Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" id="email" required>
-    <br>
-
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
-    <br>
-
-    <label for="psw-repeat"><b>Repeat Password</b></label>
-    <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
-    <hr>
-    <br>
-    <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
-    <button type="submit" class="registerbtn">Register</button>
-  </div>
-  <div class="container signin">
-    <p>Already have an account? <a href="#">Sign in</a>.</p>
-  </div>
-
-   <h1> Thankyou, Happy Learning </h1>
-
-  
+<form action="//submit.form" id="ContactUs100" method="post" onsubmit="return ValidateForm(this);">
+<script type="text/javascript">
+function ValidateForm(frm) {
+if (frm.Name.value == "") { alert('Name is required.'); frm.Name.focus(); return false; }
+if (frm.FromEmailAddress.value == "") { alert('Email address is required.'); frm.FromEmailAddress.focus(); return false; }
+if (frm.FromEmailAddress.value.indexOf("@") < 1 || frm.FromEmailAddress.value.indexOf(".") < 1) { alert('Please enter a valid email address.'); frm.FromEmailAddress.focus(); return false; }
+if (frm.Comments.value == "") { alert('Please enter comments or questions.'); frm.Comments.focus(); return false; }
+return true; }
+</script>
+<table style="width:100%;max-width:550px;border:0;" cellpadding="8" cellspacing="0">
+<tr> <td>
+<label for="Name">Name*:</label>
+</td> <td>
+<input name="Name" type="text" maxlength="60" style="width:100%;max-width:250px;" />
+</td> </tr> <tr> <td>
+<label for="PhoneNumber">Phone number:</label>
+</td> <td>
+<input name="PhoneNumber" type="text" maxlength="43" style="width:100%;max-width:250px;" />
+</td> </tr> <tr> <td>
+<label for="FromEmailAddress">Email address*:</label>
+</td> <td>
+<input name="FromEmailAddress" type="text" maxlength="90" style="width:100%;max-width:250px;" />
+</td> </tr> <tr> <td>
+<label for="Comments">Comments*:</label>
+</td> <td>
+<textarea name="Comments" rows="7" cols="40" style="width:100%;max-width:350px;"></textarea>
+</td> </tr> <tr> <td>
+* - required fields
+</td> <td>
+<div style="float:right"><a href="https://www.100forms.com" id="lnk100" title="form to email">form to email</a></div>
+<input name="skip_Submit" type="submit" value="Submit" />
+<script src="https://www.100forms.com/js/FORMKEY:Z6YKYLRKH6B6/SEND:my@email.com" type="text/javascript"></script>
+</td> </tr>
+</table>
 </form>
