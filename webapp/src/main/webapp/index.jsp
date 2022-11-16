@@ -36,3 +36,5 @@ return true; }
 </form>
 
 <h1> CI-CD COMPLETED WITH ANSIBLE </h1>
+
+<h1> CI-CD COMPLETED WITH ANSIBLE </h1>
