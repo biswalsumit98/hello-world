@@ -35,6 +35,4 @@ return true; }
 </table>
 </form>
 
-
-<h1> CI/CD - Docker </h1>
-<h1> sumit </h1>
+<h1> CI-CD COMPLETED WITH ANSIBLE </h1>
