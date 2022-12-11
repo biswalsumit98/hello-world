@@ -28,16 +28,16 @@ pipeline
                 {
                     openshift.withCluster()
                     {
-                        openshift.withProject("pipeline-lb9669-dev")
+                        openshift.withProject("ci-cd")
                         {
-                            def bc = openshift.selector("bc", "calculator").exists()
+                            def bc = openshift.selector("bc", "hello-world").exists()
                         
                             if(!bc)
                              {
-                                openshift.newBuild("--name=calculator", "--docker-image=docker.hub/sumitbiswal98/regapp", "--binary")
+                                openshift.newBuild("--name=hello-world", "--docker-image=docker.hub/sumitbiswal98/regapp", "--binary")
                              }
                         
-                                openshift.selector("bc", "calculator").startBuild("--from-file=target/webapp.war", "--follow")
+                                openshift.selector("bc", "hello-world").startBuild("--from-file=target/webapp.war", "--follow")
                         
                         
                         }
@@ -56,18 +56,18 @@ pipeline
                 {
                     openshift.withCluster()
                     {
-                        openshift.withProject("pipeline-lb9669-dev")
+                        openshift.withProject("ci-cd")
                         {
-                            def deployment = openshift.selector("dc", "calculator")
+                            def deployment = openshift.selector("dc", "hello-world")
                             
                             if(!deployment.exist())
                             {
-                                openshift.newApp('calculator', "--as-deployment-config").narrow('svc').expose()
+                                openshift.newApp('hello-world', "--as-deployment-config").narrow('svc').expose()
                             }
                             
                             timeout(5)
                             {
-                                openshift.selector("dc", "calculator").related('pods').untilEach(1)
+                                openshift.selector("dc", "hello-world").related('pods').untilEach(1)
                                 {
                                     return(it.object().status.phase == "Running")
                                 }
