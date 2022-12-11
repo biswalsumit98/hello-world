@@ -34,7 +34,7 @@ pipeline
                         
                             if(!bc)
                              {
-                                openshift.newBuild("--name=calculator", "--docker-image=registry.redhat.io/jboss-eap-7/eap74-openjdk8-openshift-rhel7", "--binary")
+                                openshift.newBuild("--name=calculator", "--docker-image=docker.hub/sumitbiswal98/regapp", "--binary")
                              }
                         
                                 openshift.selector("bc", "calculator").startBuild("--from-file=target/webapp.war", "--follow")
