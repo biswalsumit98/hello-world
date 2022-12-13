@@ -31,7 +31,7 @@ pipeline
                 {
                     openshift.withCluster()
                     {
-                        openshift.withProject("project-cicd")
+                        openshift.withProject("new-pro")
                         {
                             def buildConfigExists = openshift.selector("bc", "cicd").exists()
                             
@@ -60,7 +60,7 @@ pipeline
                 {
                     openshift.withCluster()
                     {
-                        openshift.withProject("project-cicd")
+                        openshift.withProject("new-pro")
                         {
                             def deployment = openshift.selector("dc", "cicd")
                             
