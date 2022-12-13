@@ -37,10 +37,10 @@ pipeline
                             
                             if(!buildConfigExists)
                             {
-                                openshift.newBuild("--name=cicd", "--docker-image=registry.redhat.io/jboss-eap-7/eap74-openjdk8-openshift-rhel7", "--binary")
+                                openshift.newBuild("--name=cicd", "--docker-image=registry.redhat.io/openjdk/openjdk-11-rhel7", "--binary")
                             }
                             
-                            openshift.selector("bc", "cicd").startBuild("--from-file=target/simple-servlet-0.0.1-SNAPSHOT.war", "--follow")
+                            openshift.selector("bc", "cicd").startBuild("--from-file=target/maven-project-1.0-SNAPSHOT.war", "--follow")
                             
                         }
                     }
