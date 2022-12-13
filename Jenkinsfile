@@ -40,7 +40,7 @@ pipeline
                                 openshift.newBuild("--name=cicd", "--docker-image=registry.redhat.io/openjdk/openjdk-11-rhel7", "--binary")
                             }
                             
-                            openshift.selector("bc", "cicd").startBuild("--from-file=webapp/target/webapp.war", "--follow")
+                            openshift.selector("bc", "cicd").startBuild("--from-file=webapp/target/webapp.jar", "--follow")
                             
                         }
                     }
