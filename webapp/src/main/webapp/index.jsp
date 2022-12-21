@@ -34,7 +34,3 @@ return true; }
 </td> </tr>
 </table>
 </form>
-
-<h1> CI-CD COMPLETED WITH ANSIBLE </h1>
-<h1>Hii sumit </h1>
->
